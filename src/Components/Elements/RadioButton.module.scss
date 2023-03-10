@@ -1,0 +1,63 @@
+.radioDonut {
+  display: block;
+  position: relative;
+  margin: 10px 0;
+  font-size: 16px;
+  line-height: 1.2;
+  cursor: pointer;
+  user-select: none;
+}
+
+.radioDonut input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.radioDonut .donut {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  height: 32px;
+  width: 32px;
+  border-radius: 50%;
+  border: 1px solid #ccc;
+  transition: all 0.2s ease-in-out;
+  box-sizing: border-box;
+  margin-right: 10px;
+}
+
+.radioDonut:hover input ~ .donut {
+  border-color: #f1f1f1;
+}
+
+.radioDonut input:checked ~ .donut {
+  border-color: #5c50bb;
+  background-color: #5c50bb;
+}
+
+.radioDonut input:checked ~ .donut:after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 7px;
+  left: 7px;
+  height: 16px;
+  width: 16px;
+  border-radius: 50%;
+  background-color: white;
+}
+
+@media (max-width: 767px) {
+  .radioDonut .donut {
+    height: 24px;
+    width: 24px;
+  }
+
+  .radioDonut input:checked ~ .donut:after {
+    top: 5px;
+    left: 5px;
+    height: 12px;
+    width: 12px;
+  }
+}
